@@ -1,0 +1,16 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  mat-drawer {
+    width: 260px; //here we change the width of sidenav
+    background: #ffffff; //color of sidenav
+    height: 100%;
+  }
+  // mat-drawer-container {
+  //   height: 110%;
+  // }
+
+
