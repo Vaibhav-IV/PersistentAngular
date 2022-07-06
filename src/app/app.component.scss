@@ -9,8 +9,11 @@
     background: #ffffff; //color of sidenav
     height: 100%;
   }
-  // mat-drawer-container {
-  //   height: 110%;
-  // }
+  mat-drawer-container {
+    height: 100%;
+    background-color: #ffffff;
+  }
 
-
+  mat-drawer-content{
+    height: 100%;
+  }

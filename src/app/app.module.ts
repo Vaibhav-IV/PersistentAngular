@@ -16,6 +16,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { LayoutModule } from '@angular/cdk/layout';
 
+//import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CommonModule } from "@angular/common";
 
 import { ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
@@ -68,7 +70,9 @@ import { SettingsComponent } from './settings/settings.component';
     MatIconModule,
     MatDividerModule,
     MatListModule,
-    LayoutModule
+    LayoutModule,
+    CommonModule
+   // FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent],
