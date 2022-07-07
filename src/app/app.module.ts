@@ -34,6 +34,8 @@ import { EvaluationsComponent } from './evaluations/evaluations.component';
 import { AnnouncementsComponent } from './announcements/announcements.component';
 import { ReportsComponent } from './reports/reports.component';
 import { SettingsComponent } from './settings/settings.component';
+import { PlotComponent } from './plot/plot.component';
+import { ProgressbarComponent } from './progressbar/progressbar.component';
 
 
 
@@ -54,7 +56,9 @@ import { SettingsComponent } from './settings/settings.component';
     EvaluationsComponent,
     AnnouncementsComponent,
     ReportsComponent,
-    SettingsComponent
+    SettingsComponent,
+    PlotComponent,
+    ProgressbarComponent
     
   ],
   imports: [

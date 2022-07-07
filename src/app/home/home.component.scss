@@ -37,7 +37,7 @@
     grid-template-columns: repeat(auto-fill, minmax(20%, 240px));
     grid-auto-rows: 1fr;
     justify-content: space-evenly;
-    gap: 20px;
+    gap: 15px;
 }
 
 .cardicon {
@@ -47,6 +47,7 @@
     padding: 10px 5px;
     box-shadow: 0px 0px 20px -13px black;
     border-radius: 2px 5px 5px 2px;
+    height: 110px;
 }
 
 .leftPart {
@@ -149,3 +150,10 @@
 }
 
 //ENd of Card SCSS
+
+
+//progressclass and plot class
+
+// .progressclass{
+//     display: flex;
+// }

@@ -10,7 +10,6 @@ import { MatSidenav } from '@angular/material/sidenav';
 export class AppComponent {
   title = 'PersistentAngular';
   sideBarOpen = true;  //to chnage the default position of sidebar open or closed
-
   constructor(private observer: BreakpointObserver) {}
 
   @ViewChild(MatSidenav)

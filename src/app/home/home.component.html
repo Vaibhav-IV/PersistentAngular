@@ -1,10 +1,10 @@
 <div class="container-fluid page">
   <div class="d-flex page__box p-3 mt-2">Home</div>
-  
-  <div class="page__content shadow p-3 position-relative">
-    
-<!-- remove position absolute from every html file -->
-    <div class="page__content-data"> 
+
+  <div class="page__content p-3 position-relative">
+
+    <!-- remove position absolute from every html file -->
+    <div class="page__content-data">
       <!-- Home Content Goes Here
       <div class="p-3 mt-2 breadcrumblinks">
         <a routerLink="./meetings">
@@ -14,30 +14,43 @@
 
 
       <div class="container">
-        <div *ngFor="let cardData of cardsData" class="cardicon" >
-            <div class="leftPart">
-                <p class="pt-1">{{cardData.title}}</p>
-                <h2>{{ cardData.count }}</h2>
-            </div>
-            <div class="rightPart">
-                <i ngClass="{{ cardData.icon }}"></i>
-            </div>
+        <div *ngFor="let cardData of cardsData" class="cardicon">
+          <div class="leftPart">
+            <p class="pt-1">{{cardData.title}}</p>
+            <h2>{{ cardData.count }}</h2>
+          </div>
+          <div class="rightPart">
+            <i ngClass="{{ cardData.icon }}"></i>
+          </div>
         </div>
         <div class="cardicon">
-            <div class="leftPart">
-                <p>License prepaid</p>
-                <div>
-                    <p>total: 4928 Consumed: 2922</p>
-                    <p>available: 329</p>
-                    <p style="color:rgb(0, 102, 185);">valid till : 1 July 2022</p>
-                </div>
+          <div class="leftPart">
+            <p>License prepaid</p>
+            <div>
+              <p>total: 4928 Consumed: 2922</p>
+              <p>available: 329</p>
+              <p style="color:rgb(0, 102, 185);">valid till : 1 July 2022</p>
             </div>
+          </div>
         </div>
+      </div>
     </div>
 
-    </div>
+    <mat-divider></mat-divider>
 
-   
+
+    <!-- this is graph component -->
+
+    <div class="row">
+      <div class="progressclass col-lg-4 col-md-12 col-sm-12 mt-2 pd-2">
+        <app-progressbar></app-progressbar>
+      </div>
+
+      <div class="plotclass col-lg-8 col-md-12 col-sm-12 mt-2 pd-2">
+        <app-plot></app-plot>
+      </div>
+    </div>
+    <!-- end of graph component -->
 
   </div>
 </div>

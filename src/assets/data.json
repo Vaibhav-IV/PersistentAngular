@@ -1,0 +1,62 @@
+[
+
+    {
+
+        "courseName": "Java",
+
+        "enrollments": 24,
+
+        "completions": 12
+
+    },
+
+    {
+
+        "courseName": "Python",
+
+        "enrollments": 56,
+
+        "completions": 34
+
+    },
+
+    {
+
+        "courseName": "C++",
+
+        "enrollments": 20,
+
+        "completions": 11
+
+    },
+
+    {
+
+        "courseName": "Testing",
+
+        "enrollments": 10,
+
+        "completions": 6
+
+    },
+
+    {
+
+        "courseName": "React",
+
+        "enrollments": 44,
+
+        "completions": 44
+
+    },
+    {
+
+        "courseName": "Angular",
+
+        "enrollments": 100,
+
+        "completions": 44
+
+    }
+
+]
