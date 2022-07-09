@@ -36,6 +36,7 @@ import { ReportsComponent } from './reports/reports.component';
 import { SettingsComponent } from './settings/settings.component';
 import { PlotComponent } from './plot/plot.component';
 import { ProgressbarComponent } from './progressbar/progressbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -58,7 +59,8 @@ import { ProgressbarComponent } from './progressbar/progressbar.component';
     ReportsComponent,
     SettingsComponent,
     PlotComponent,
-    ProgressbarComponent
+    ProgressbarComponent,
+    FooterComponent
     
   ],
   imports: [

@@ -1,8 +1,6 @@
 <div class="container-fluid page">
-  <div class="d-flex page__box p-3 mt-2">Home</div>
-
+  <div class="page__box"></div>
   <div class="page__content p-3 position-relative">
-
     <!-- remove position absolute from every html file -->
     <div class="page__content-data">
       <!-- Home Content Goes Here
@@ -11,7 +9,6 @@
           This is meeting 1 in Home component
         </a>
       </div> -->
-
 
       <div class="container">
         <div *ngFor="let cardData of cardsData" class="cardicon">
@@ -36,21 +33,22 @@
       </div>
     </div>
 
-    <mat-divider></mat-divider>
 
 
     <!-- this is graph component -->
 
-    <div class="row">
-      <div class="progressclass col-lg-4 col-md-12 col-sm-12 mt-2 pd-2">
+    <!-- <div class="row align-items-center no-gutters">
+      <div class="col-lg-4 col-md-12 col-sm-12 mt-2 pd-2">
         <app-progressbar></app-progressbar>
       </div>
 
-      <div class="plotclass col-lg-8 col-md-12 col-sm-12 mt-2 pd-2">
+      <div class="col-lg-8 col-md-12 col-sm-12 mt-2 pd-2">
         <app-plot></app-plot>
       </div>
-    </div>
+    </div> -->
     <!-- end of graph component -->
+
+    <app-plot></app-plot>
 
   </div>
 </div>
