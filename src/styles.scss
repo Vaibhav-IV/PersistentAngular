@@ -1,9 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
 
-*{
+html {
+    font-size: 13px;
+}
+
+* {
     padding: 0px;
     margin: 0px;
+    box-sizing: border-box;
+    font-family: Nunito, sans-serif;
+    // color: black;
+}
+
+.divider {
+    margin: 20px 0px;
+}
+
+// write media query
+@media screen and (min-width:1400px) {
+    html {
+        font-size: 15px;
+    }
 }

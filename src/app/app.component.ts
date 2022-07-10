@@ -1,6 +1,7 @@
-import { Component,ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,9 @@ import { MatSidenav } from '@angular/material/sidenav';
 export class AppComponent {
   title = 'PersistentAngular';
   sideBarOpen = true;  //to chnage the default position of sidebar open or closed
-  constructor(private observer: BreakpointObserver) {}
+
+  constructor(private observer: BreakpointObserver) {
+  }
 
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;

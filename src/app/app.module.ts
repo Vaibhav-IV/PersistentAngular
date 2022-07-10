@@ -20,7 +20,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { CommonModule } from "@angular/common";
 
 import { ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -34,9 +34,10 @@ import { EvaluationsComponent } from './evaluations/evaluations.component';
 import { AnnouncementsComponent } from './announcements/announcements.component';
 import { ReportsComponent } from './reports/reports.component';
 import { SettingsComponent } from './settings/settings.component';
-import { PlotComponent } from './plot/plot.component';
-import { ProgressbarComponent } from './progressbar/progressbar.component';
+import { PlotComponent } from './home/plot/plot.component';
+// import { ProgressbarComponent } from './home/progressbar/progressbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { CardsComponent } from './home/cards/cards.component';
 
 
 
@@ -59,9 +60,10 @@ import { FooterComponent } from './footer/footer.component';
     ReportsComponent,
     SettingsComponent,
     PlotComponent,
-    ProgressbarComponent,
-    FooterComponent
-    
+    // ProgressbarComponent,
+    FooterComponent,
+    CardsComponent
+
   ],
   imports: [
     BrowserModule,
@@ -78,7 +80,7 @@ import { FooterComponent } from './footer/footer.component';
     MatListModule,
     LayoutModule,
     CommonModule
-   // FontAwesomeModule
+    // FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent],

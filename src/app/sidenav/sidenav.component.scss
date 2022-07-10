@@ -1,56 +1,61 @@
-:host {
-  .mat-icon {
-    vertical-align: middle;
-    margin-right: 1rem;
-  }
+// :host {
+//   .mat-icon {
+//     vertical-align: middle;
+//     margin-right: 1rem;
+//   }
+// }
+mat-nav-list {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
 }
 
 .logo {
   text-align: center;
-  padding: 2.6rem 1rem;
+  width: 100%;
 
   img {
-    width: 200px;
-    height: 50px;
+    width: 100%;
   }
 }
 
 .mat-divider {
-  border-top-width: 3px;
+  border-top-width: 1px;
   border-color: rgba(230, 56, 12, 0.91);
 }
 
 .mat-list-item {
-  color: #6f84a1 ;
-  font-size: 0.9rem;
-  height: 20px ;
-  margin-bottom: 2px; //hoverinvg margin
-  margin: 0px;
+  color: #6f84a1;
+  font-size: 1rem;
 
   &:hover {
-    color: #f2f5f7 ;
+    color: #f2f5f7;
   }
 
   ::ng-deep {
     .mat-list-item-content {
-      border-radius: 12px;
-      margin: 0 8px;
+      // border-radius: 12px;
+
       &:hover {
-        background: #FF4500 ;
+        background: #FF4500;
       }
     }
   }
 }
 
+mat-icon {
+  font-size: 1.5rem;
+}
+
 .list-item-active {
-  color: #ffffff ;
+  color: #ffffff;
 
   ::ng-deep {
     .mat-list-item-content {
-      background: #5db235 ;
+      background: #5db235;
 
       &:hover {
-        background: #5db235 ;  //hovring while that paticular element is slected it wont cgange color as is same as when it is being hovered
+        background: #5db235; //hovring while that paticular element is slected it wont cgange color as is same as when it is being hovered
       }
     }
   }
