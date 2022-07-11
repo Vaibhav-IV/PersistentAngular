@@ -23,16 +23,16 @@ mat-toolbar-row .left {
   cursor: pointer;
 }
 
-
-.breadcrumb {
+.breadcrumbs {
   display: flex;
+  margin: 0px !important;
 
-  .breadcrumb-item {
+  .breadcrumbs-item {
     list-style: none;
   }
 }
 
-button {
+mat-toolbar-row button {
   outline: none;
   border-radius: 5px;
   border: 0px;

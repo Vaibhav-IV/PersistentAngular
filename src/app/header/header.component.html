@@ -6,9 +6,9 @@
       </button>
 
 
-      <div class="breadcrumbList">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item" *ngFor="let item of breadcrumbList; let i = index"
+      <div class="breadcrumbsList">
+        <ol class="breadcrumbs">
+          <li class="breadcrumbs-item" *ngFor="let item of breadcrumbList; let i = index"
             [class.active]="i===breadcrumbList.length-1">
             <span *ngIf="i!==breadcrumbList.length-1">
               <a [routerLink]="item.path">

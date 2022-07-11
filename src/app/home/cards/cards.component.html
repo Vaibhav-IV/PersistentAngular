@@ -1,25 +1,25 @@
-<div class="container">
-    <div class="card-column" *ngFor="let cardData of cardsData">
-      <div class="card">
-        <div class="leftPart">
-          <p class="">{{cardData.title}}</p>
-          <h2>{{ cardData.count }}</h2>
-        </div>
-        <div class="rightPart">
-          <i ngClass="{{ cardData.icon }}"></i>
-        </div>
+<div class="cardsContainer">
+  <div class="cardColumn" *ngFor="let cardData of cardsData">
+    <div class="statCard">
+      <div class="leftPart">
+        <p class="">{{cardData.title}}</p>
+        <h2>{{ cardData.count }}</h2>
+      </div>
+      <div class="rightPart">
+        <i ngClass="{{ cardData.icon }}"></i>
       </div>
     </div>
-    <div class="card-column">
-      <div class="card">
-        <div class="leftPart">
-          <p>License prepaid</p>
-          <div>
-            <p>total: 4928 Consumed: 2922</p>
-            <p>available: 329</p>
-            <p style="color:rgb(0, 102, 185);">valid till : 1 July 2022</p>
-          </div>
+  </div>
+  <div class="cardColumn">
+    <div class="statCard">
+      <div class="leftPart">
+        <p>License prepaid</p>
+        <div>
+          <p>total: 4928 Consumed: 2922</p>
+          <p>available: 329</p>
+          <p style="color:rgb(0, 102, 185);">valid till : 1 July 2022</p>
         </div>
       </div>
     </div>
   </div>
+</div>
