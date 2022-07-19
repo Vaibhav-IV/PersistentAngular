@@ -1,4 +1,4 @@
-<div class="cardsContainer">
+<div class="cardsContainer" *ngIf="roll=='admin'">
   <div class="cardColumn" *ngFor="let cardData of cardsData">
     <div class="statCard">
       <div class="leftPart">
@@ -22,4 +22,49 @@
       </div>
     </div>
   </div>
+</div>
+
+
+<div class="cardsContainer" *ngIf="roll=='teacher'">
+  <div class="cardColumn1" *ngFor="let cardData of teacherCardsData">
+    <div class="statCard">
+      <div class="leftPart">
+        <p class="">{{cardData.title}}</p>
+        <h2>{{ cardData.count }}</h2>
+      </div>
+      <div class="rightPart">
+        <i ngClass="{{ cardData.icon }}"></i>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+
+
+<div class="cardsContainer" *ngIf="roll=='student'">
+  <div class="cardColumn2" *ngFor="let cardData of studentcardsData">
+    <div class="statCard">
+      <div class="leftPart">
+        <p class="">{{cardData.title}}</p>
+        <h2>{{ cardData.count }}</h2>
+      </div>
+      <div class="rightPart">
+        <i ngClass="{{ cardData.icon }}"></i>
+      </div>
+    </div>
+  </div>
+  <div class="cardColumn3" *ngFor="let cardData of studentcardsData1">
+    <div class="statCard">
+      <div class="leftPart">
+        <p class="" >{{cardData.title}}</p>
+        <h2 style="font-size: 14px;">{{ cardData.data }}</h2>
+      </div>
+      <div class="rightPart">
+        <i ngClass="{{ cardData.icon }}"></i>
+      </div>
+    </div>
+  </div>
+  
+ 
 </div>

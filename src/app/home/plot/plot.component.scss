@@ -1,7 +1,3 @@
-@import '../home.component.scss';
-
-
-
 .progressContainer {
   width: 100%;
   display: flex;
@@ -14,17 +10,16 @@
   padding: 1rem .5rem;
 }
 
-.progressCard,
-.plotgraphCard {
+.progressCard, .plotgraphCard {
+    h1 {
+    font-size: 3rem;
+       }
+  
   background-color: white;
   padding: 1rem 1rem;
   box-shadow: 0px 0px 10px -2px rgb(168, 168, 168);
 }
 
-
-.progressCard h1 {
-  font-size: 3rem;
-}
 
 .table {
   width: 100%;
@@ -44,53 +39,4 @@
 
 .table tr td:nth-child(4) {
   width: 15%;
-}
-
-
-
-//start of progressbar component'
-
-#div1 {
-  background: #48bb78;
-  color: #48bb78;
-}
-
-#div2 {
-  background: #ecc94b;
-  color: #ecc94b;
-}
-
-#div3 {
-  background: #ed8936;
-  color: #ed8936;
-}
-
-#div4 {
-  background: #e53e3e;
-  color: #e53e3e;
-}
-
-#div5 {
-  background: #805ad5;
-  color: #805ad5;
-}
-
-#divr1 {
-  color: #48bb78;
-}
-
-#divr2 {
-  color: #ecc94b;
-}
-
-#divr3 {
-  color: #ed8936;
-}
-
-#divr4 {
-  color: #e53e3e;
-}
-
-#divr5 {
-  color: #805ad5;
 }

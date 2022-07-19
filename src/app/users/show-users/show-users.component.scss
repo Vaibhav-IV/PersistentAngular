@@ -1,10 +1,136 @@
 .usersContainer {
-    display: block;
+    position: relative;
     width: 100%;
-    background-color: red;
-    overflow: scroll;
+
+    .buttons {
+        display: flex;
+        margin-bottom: 5px;
+
+        * {
+            color: white
+        }
+
+        button {
+            padding: 5px 10px;
+            border: none;
+
+
+            &:nth-child(1) {
+                background-color: #00C897;
+
+                &:hover {
+                    background-color: #0b906f;
+                }
+            }
+
+            &:nth-child(2) {
+                background-color: #E8AA42;
+
+                &:hover {
+                    background-color: #b27b1b;
+                }
+            }
+        }
+
+        input {
+            width: 100px;
+            background-color: #3D84A8;
+            color: white;
+            padding: 10px;
+            border: none;
+            transition: all 0.3s;
+        }
+
+
+        input::-webkit-input-placeholder {
+            color: rgb(255, 255, 255);
+        }
+
+        input:focus {
+            width: 500px;
+            background-color: #513252;
+            color: white;
+            border: none;
+            outline: none;
+        }
+    }
+
+    .usersTableContainer {
+        position: relative;
+        display: block;
+        width: auto;
+        height: 70vh;
+        overflow: scroll;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        table {
+            width: 100%;
+            background: white !important;
+
+            td,
+            th {
+                color: black !important;
+            }
+
+            th {
+                background-color: rgb(182, 178, 178);
+            }
+
+            td {
+                border-bottom: 1px solid rgb(226, 226, 226);
+            }
+
+            tr:hover {
+                background-color: rgb(226, 226, 226);
+            }
+        }
+
+        // .paginatorContainer {
+        //     // position: fixed;
+        //     // bottom: 1.5rem;
+        // }
+    }
 }
 
-.usersContainer table {
-    width: 100%;
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: black !important;
+}
+
+::ng-deep .mat-form-field {
+    .mat-input-element {
+        color: slategray;
+    }
+    .mat-form-field-label {
+        color: rgb(13, 13, 13);
+    }
+    .mat-form-field-underline {
+        background-color: slategray;
+    }
+    .mat-form-field-ripple {
+        background-color: slategray;
+    }
+    .mat-form-field-required-marker {
+        color: slategray;
+    }
+    
+}
+
+::ng-deep .mat-select-content{
+    width:2000px;
+    background-color: rgb(10, 10, 10);
+    font-size: 10px;  
+}
+
+::ng-deep .mat-label{
+    color: black; 
+}
+
+.example-label{
+    width: 150px;
+    height: auto;
+    display: inline;
+    padding-right: 5px;
 }

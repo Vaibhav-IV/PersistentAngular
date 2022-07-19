@@ -1,7 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
-import { HostListener } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from './services/auth.service';
+
 
 @Component({
   selector: 'app-root',
@@ -11,9 +13,8 @@ import { HostListener } from '@angular/core';
 export class AppComponent {
   title = 'PersistentAngular';
   sideBarOpen = true;  //to chnage the default position of sidebar open or closed
-
-  constructor(private observer: BreakpointObserver) {
-  }
+  
+  constructor(private observer: BreakpointObserver, private router: Router, public loginAuth: AuthService) { }
 
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
@@ -21,16 +22,4 @@ export class AppComponent {
   sideBarToggler() {
     this.sideBarOpen = !this.sideBarOpen;
   }
-
-  // ngAfterViewInit() {
-  //   this.observer.observe(['(max-width: 800px)']).subscribe((res) => {
-  //     if (res.matches) {
-  //       this.sidenav.mode = 'over';
-  //       this.sidenav.close();
-  //     } else {
-  //       this.sidenav.mode = 'side';
-  //       this.sidenav.open();
-  //     }
-  //   });
-  // }
 }

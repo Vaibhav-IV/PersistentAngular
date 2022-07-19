@@ -1,0 +1,83 @@
+*{
+    overflow: hidden !important;
+}
+
+.example-label{
+    width: 150px;
+    height: auto;
+    display: inline;
+    padding-right: 5px;
+}
+
+.usersContainer {
+    display: block;
+    width: 100%;
+    background-color: white;
+    overflow: scroll;
+    margin-top: 10px;
+}
+
+.usersContainer table {
+    width: 100%;
+}
+
+.mat-cell {
+    background-color: white;
+    color: black;
+}
+
+.mat-header-cell {
+    font-weight: bold;
+    font-size: 16px;
+    background-color: rgb(198, 192, 192);
+    color: rgb(90, 90, 244);
+}
+
+.paginatorclass {
+    font-size: 16px;
+    background-color: rgb(187, 187, 189);
+    color: blue;
+}
+
+.tablecontainer {
+    position: relative;
+    display: block;
+    width: auto;
+    height: 70vh;
+    overflow-y: hidden;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: black !important;
+}
+
+::ng-deep .mat-form-field {
+    .mat-input-element {
+        color: slategray;
+    }
+    .mat-form-field-label {
+        color: rgb(13, 13, 13);
+    }
+    .mat-form-field-underline {
+        background-color: slategray;
+    }
+    .mat-form-field-ripple {
+        background-color: slategray;
+    }
+    .mat-form-field-required-marker {
+        color: slategray;
+    }
+    
+}
+
+::ng-deep .mat-select-content{
+    width:2000px;
+    background-color: rgb(10, 10, 10);
+    font-size: 10px;  
+}
+
+::ng-deep .mat-label{
+    color: black; 
+}
+
+

@@ -1,9 +1,12 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { LayoutModule } from '@angular/cdk/layout';
+import { CommonModule } from "@angular/common";
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
-
-
+//Mat Modules
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
@@ -11,17 +14,24 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
-import { LayoutModule } from '@angular/cdk/layout';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import{MatNativeDateModule} from '@angular/material/core'
+import {MatFormFieldModule,} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule} from '@angular/material/sort';
+import {  MatExpansionModule} from '@angular/material/expansion';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 
-//import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { CommonModule } from "@angular/common";
 
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+//All Components
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { HomeComponent } from './home/home.component';
@@ -37,17 +47,17 @@ import { AnnouncementsComponent } from './announcements/announcements.component'
 import { ReportsComponent } from './reports/reports.component';
 import { SettingsComponent } from './settings/settings.component';
 import { PlotComponent } from './home/plot/plot.component';
-// import { ProgressbarComponent } from './home/progressbar/progressbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { CardsComponent } from './home/cards/cards.component';
 import { ShowUsersComponent } from './users/show-users/show-users.component';
-
-
+import { AddCoursesComponent } from './courses/add-courses/add-courses.component';
+import { ShowCoursesComponent } from './courses/show-courses/show-courses.component';
+import { AddUsersComponent } from './users/add-users/add-users.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    //HeaderComponent,
     HeaderComponent,
     SidenavComponent,
     HomeComponent,
@@ -63,10 +73,13 @@ import { ShowUsersComponent } from './users/show-users/show-users.component';
     ReportsComponent,
     SettingsComponent,
     PlotComponent,
-    // ProgressbarComponent,
     FooterComponent,
     CardsComponent,
-    ShowUsersComponent
+    ShowUsersComponent,
+    AddCoursesComponent,
+    ShowCoursesComponent,
+    AddUsersComponent,
+    LoginComponent
 
   ],
   imports: [
@@ -83,9 +96,22 @@ import { ShowUsersComponent } from './users/show-users/show-users.component';
     MatDividerModule,
     MatListModule,
     MatTableModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatSidenavModule,
+    MatExpansionModule,
+    MatAutocompleteModule,
+    MatBadgeModule,
+    MatProgressBarModule,
+    NgxMatSelectSearchModule,
     LayoutModule,
     CommonModule
-    // FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent],

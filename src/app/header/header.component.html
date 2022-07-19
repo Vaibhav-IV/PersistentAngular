@@ -1,11 +1,10 @@
 <mat-toolbar>
   <mat-toolbar-row>
+
     <div class="left">
       <button mat-icon-button (click)="toggleSidebar()">
         <mat-icon>menu</mat-icon>
       </button>
-
-
       <div class="breadcrumbsList">
         <ol class="breadcrumbs">
           <li class="breadcrumbs-item" *ngFor="let item of breadcrumbList; let i = index"
@@ -22,27 +21,17 @@
     </div>
 
     <div class="right">
-
       <button mat-button [matMenuTriggerFor]="menu" class="user">
         <img src="./assets/user.jpg" alt="" class="user-image" />
-        <span>tejas bhagwan gaikwad</span>
+        <span>User Name</span>
       </button>
-
-
       <mat-menu #menu="matMenu">
-        <button mat-menu-item>
+        <button mat-menu-item (click)="loginAuth.logOut()">
           <mat-icon>exit_to_app</mat-icon>
           Logout
         </button>
       </mat-menu>
-
     </div>
 
-
-
   </mat-toolbar-row>
-
-
 </mat-toolbar>
-
-<!-- <router-outlet></router-outlet> -->

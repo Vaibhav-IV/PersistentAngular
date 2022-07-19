@@ -3,6 +3,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { MenuService } from '../services/menu.service';
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -12,9 +13,12 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 export class HeaderComponent implements OnInit {
   @Output() toggleSidebarForMe: EventEmitter<any> = new EventEmitter();
 
-
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
+
+  toggleSidebar() {
+    this.toggleSidebarForMe.emit();
+  }
 
   name: string | undefined;
   menu: Array<any> = [];
@@ -22,29 +26,12 @@ export class HeaderComponent implements OnInit {
 
   constructor(private router: Router,
     private menuService: MenuService,
-    private observer: BreakpointObserver) { }
-
-
-  ngAfterViewInit() {
-    this.observer.observe(['(max-width: 800px)']).subscribe((res) => {
-      if (res.matches) {
-        this.sidenav.mode = 'over';
-        this.sidenav.close();
-      } else {
-        this.sidenav.mode = 'side';
-        this.sidenav.open();
-      }
-    });
-  }
-
+    private observer: BreakpointObserver,
+    public loginAuth: AuthService) { }
 
   ngOnInit(): void {
     this.menu = this.menuService.getMenu();
     this.listenRouting();
-  }
-
-  toggleSidebar() {
-    this.toggleSidebarForMe.emit();
   }
 
   listenRouting() {
@@ -62,7 +49,7 @@ export class HeaderComponent implements OnInit {
           target = target.find((page: { path: string | any[]; }) => page.path.slice(2) === router);
 
           this.breadcrumbList.push({
-            name: target.name,
+          name: target.name,
 
             path: (index === 0) ? target.path : `${this.breadcrumbList[index - 1].path}/${target.path.slice(2)}`
           });

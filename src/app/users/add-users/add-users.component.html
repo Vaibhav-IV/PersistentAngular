@@ -1,0 +1,120 @@
+<h1>Add Users details</h1>
+<mat-divider></mat-divider>
+
+<form [formGroup]="addUserForm" class="p-5 ml-3 formbox">
+
+  <div class="row">
+    <div class="col-md-2 pt-3 subtitle">
+       User Name
+    </div>
+    <div class="col-md-4">
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>User Name</mat-label>
+          <input formControlName="userName" type="text" matInput placeholder="Enter User Name">
+        </mat-form-field>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2 pt-3 subtitle">
+      User Email
+    </div>
+    <div class="col-md-4">
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="userEmail" type="email" placeholder="Enter">
+        </mat-form-field>
+      </p>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-2 pt-3 subtitle">
+     Mobile
+    </div>
+    <div class="col-md-4">
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Mobile</mat-label>
+          <input formControlName="mobile" type="number" matInput placeholder="Mobile">
+        </mat-form-field>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2 pt-3 subtitle">
+     Password
+    </div>
+    <div class="col-md-4">
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input formControlName="password" type="password" matInput placeholder="Enter Password">
+          <mat-error></mat-error>
+        </mat-form-field>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2 pt-3 subtitle">
+    Confirm Password
+    </div>
+    <div class="col-md-4">
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Confirm Password</mat-label>
+          <input formControlName="confirmPassword" type="password" matInput placeholder="Enter Confirm Password">
+        </mat-form-field>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2 pt-3 subtitle">
+      Role
+    </div>
+    <div class="col-md-4">
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Role</mat-label>
+          <mat-select formControlName="role">
+            <mat-option label="--select role --"></mat-option>
+            <mat-option value="Admin">Admin</mat-option>
+            <mat-option value="Teacher">Teacher</mat-option>
+            <mat-option value="Student">Student</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2 pt-3 subtitle">
+      Reporting To: 
+    </div>
+    <div class="col-md-4">
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Reporting To</mat-label>
+          <mat-select formControlName="reportingTo">
+            <mat-option label="--select role --"></mat-option>
+            <mat-option value="Admin">Admin</mat-option>
+            <mat-option value="Teacher">Teacher</mat-option>
+            <mat-option value="Student">Student</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </p>
+    </div>
+  </div>
+
+</form>
+
+<div class="example-label">
+  <button  mat-raised-button color="primary" (click)="addUser()" class="example-label">Submit</button>
+</div>

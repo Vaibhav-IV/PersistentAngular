@@ -1,14 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import graphdata from 'src/assets/db.json';
 import { Chart } from 'chart.js';
-
+import graphdata from '../../json/plotdata.json'
 //this is for progress bar
-import coursesData from 'src/assets/data.json';
+import coursesData from '../../json/progressBarData.json'
 interface CourseData {
   courseName: String;
   enrollments: number;
   completions: Number;
-
 }
 
 @Component({
@@ -16,6 +14,7 @@ interface CourseData {
   templateUrl: './plot.component.html',
   styleUrls: ['./plot.component.scss']
 })
+
 export class PlotComponent implements OnInit {
 
   constructor() {}
@@ -57,7 +56,6 @@ export class PlotComponent implements OnInit {
   //start of progressbar
 
   courses: CourseData[] = coursesData;
-  //temp:Number=this.courses[0].enrollments;
   temp: CourseData = this.courses[0];
 
   color: Array<string> = ['divr1', 'divr2', 'divr3', 'divr4', 'divr5'];
