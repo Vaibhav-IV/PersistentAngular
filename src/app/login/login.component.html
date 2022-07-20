@@ -1,5 +1,5 @@
 <div class="loginFormContainer">
-    <img src="./assets/logo2.jpg" alt="">
+    <img src="./assets/logo.jpg" alt="">
     <div class="loginForm">
         <div class="logo">
             <h1>LMS</h1>
@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="alert alert-danger" role="alert" *ngIf="isInvalid">
-                    <strong> credentials do not match</strong>
+                    <strong> {{ msg }}</strong>
                 </div>
 
             </form>

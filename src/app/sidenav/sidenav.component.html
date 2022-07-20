@@ -8,47 +8,50 @@
     <mat-icon>dashboard</mat-icon>Dashboard
   </a>
 
-  <mat-accordion>
+  <mat-accordion *ngIf="this.userRole==1 || this.userRole==2 || this.userRole==3">
     <mat-expansion-panel class="mat-elevation-z0">
-      <mat-expansion-panel-header> 
+      <mat-expansion-panel-header>
         <mat-panel-title>
-          <mat-icon class="mr-2">dashboard</mat-icon> Courses 
+          <mat-icon class="mr-2">dashboard</mat-icon> Courses
         </mat-panel-title>
       </mat-expansion-panel-header>
-      <a mat-list-item routerLink="home/courses/addCourses" routerLinkActive="list-item-active">
+      <a mat-list-item routerLink="home/courses/addCourses" routerLinkActive="list-item-active"
+        *ngIf="this.userRole==1">
         <mat-icon>add</mat-icon> Add Courses
       </a>
       <a mat-list-item routerLink="home/courses/showCourses" routerLinkActive="list-item-active">
         <mat-icon>show_chart</mat-icon> Show Courses
       </a>
-      <a mat-list-item routerLinkActive="list-item-active">
+      <a mat-list-item routerLinkActive="list-item-active" *ngIf="this.userRole==1">
         <mat-icon>compare_arrows</mat-icon> Import Courses
       </a>
-      <a mat-list-item routerLinkActive="list-item-active">
+      <a mat-list-item routerLinkActive="list-item-active" *ngIf="this.userRole==1">
         <mat-icon>linear_scale</mat-icon> Learning Path
       </a>
     </mat-expansion-panel>
   </mat-accordion>
 
-  <a mat-list-item routerLink="home/learnings" routerLinkActive="list-item-active">
+  <a mat-list-item routerLink="home/learnings" routerLinkActive="list-item-active"
+    *ngIf="this.userRole==1 || this.userRole==3">
     <mat-icon>assignment</mat-icon>Learning Objects
   </a>
-  <a mat-list-item routerLink="home/sessions" routerLinkActive="list-item-active">
+
+  <a mat-list-item routerLink="home/sessions" routerLinkActive="list-item-active"
+    *ngIf="this.userRole==1||this.userRole==2 || this.userRole==3">
     <mat-icon>class</mat-icon>Classroom Sessions
   </a>
-  <a mat-list-item routerLink="home/meetings" routerLinkActive="list-item-active">
+
+  <a mat-list-item routerLink="home/meetings" routerLinkActive="list-item-active"
+    *ngIf="this.userRole==1 || this.userRole==3">
     <mat-icon>videocam</mat-icon>Webninars/Meeting
   </a>
 
-  <!-- <a mat-list-item routerLink="home/users" routerLinkActive="list-item-active">
-    <mat-icon>people</mat-icon>Users
-  </a> -->
 
-  <mat-accordion>
+  <mat-accordion *ngIf="this.userRole==1">
     <mat-expansion-panel class="mat-elevation-z0">
-      <mat-expansion-panel-header> 
+      <mat-expansion-panel-header>
         <mat-panel-title>
-          <mat-icon class="mr-2">people</mat-icon> Users 
+          <mat-icon class="mr-2">people</mat-icon> Users
         </mat-panel-title>
       </mat-expansion-panel-header>
       <a mat-list-item routerLink="home/users/addUsers" routerLinkActive="list-item-active">
@@ -60,19 +63,37 @@
     </mat-expansion-panel>
   </mat-accordion>
 
-  <a mat-list-item routerLink="home/batches" routerLinkActive="list-item-active">
+  <a mat-list-item routerLink="home/batches" routerLinkActive="list-item-active" *ngIf="this.userRole==1">
     <mat-icon>class</mat-icon>Batches
   </a>
-  <a mat-list-item routerLink="home/evaluations" routerLinkActive="list-item-active">
+
+  <a mat-list-item routerLink="home/evaluations" routerLinkActive="list-item-active"
+    *ngIf="this.userRole==1 || this.userRole==2">
     <mat-icon>assignment_turned_in</mat-icon>Evaluations
   </a>
-  <a mat-list-item routerLink="home/announcements" routerLinkActive="list-item-active">
+
+  <a mat-list-item routerLink="home/queries" routerLinkActive="list-item-active" *ngIf="this.userRole==3">
+    <mat-icon>query_builder</mat-icon>queries
+  </a>
+
+  <a mat-list-item routerLink="home/announcements" routerLinkActive="list-item-active"
+    *ngIf="this.userRole==1 || this.userRole==2 || this.userRole==3">
     <mat-icon>edit</mat-icon>Announcements
   </a>
-  <a mat-list-item routerLink="home/reports" routerLinkActive="list-item-active">
+
+  <a mat-list-item routerLink="home/course-reports" routerLinkActive="list-item-active" *ngIf="this.userRole==2">
+    <mat-icon>graphic_eq</mat-icon>course reports
+  </a>
+
+  <a mat-list-item routerLink="home/reports" routerLinkActive="list-item-active" *ngIf="this.userRole==1">
     <mat-icon>report_problem</mat-icon> Reports
   </a>
-  <a mat-list-item routerLink="home/settings" routerLinkActive="list-item-active">
+
+  <a mat-list-item routerLink="home/notifications" routerLinkActive="list-item-active" *ngIf="this.userRole==3">
+    <mat-icon>notification_important</mat-icon> Notifications
+  </a>
+
+  <a mat-list-item routerLink="home/settings" routerLinkActive="list-item-active" *ngIf="this.userRole==1">
     <mat-icon>settings</mat-icon> Settings
   </a>
 </mat-nav-list>

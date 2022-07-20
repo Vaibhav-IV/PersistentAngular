@@ -49,7 +49,7 @@ export class HeaderComponent implements OnInit {
           target = target.find((page: { path: string | any[]; }) => page.path.slice(2) === router);
 
           this.breadcrumbList.push({
-          name: target.name,
+            name: target.name,
 
             path: (index === 0) ? target.path : `${this.breadcrumbList[index - 1].path}/${target.path.slice(2)}`
           });
@@ -60,7 +60,7 @@ export class HeaderComponent implements OnInit {
           }
         });
 
-        console.log(this.breadcrumbList);
+        // console.log(this.breadcrumbList);
       }
     });
   }

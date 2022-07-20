@@ -10,6 +10,8 @@ import { AuthService } from '../services/auth.service';
 
 export class LoginComponent implements OnInit {
   isInvalid = false;
+  msg: string = '';
+  userData = {};
 
   public loginForm!: FormGroup;
   userCredentials!: { email: string, password: string, isStaySignedIn: boolean };
@@ -24,12 +26,21 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    const isValid = this.loginAuth.authenticate(this.loginForm.value.email, this.loginForm.value.password);
-    if (isValid) {
-      this.router.navigate(['/dashboard']);
-    } else {
-      this.isInvalid = true;
-    }
+    const sub = this.loginAuth.authenticate(this.loginForm.value.email, this.loginForm.value.password).subscribe({
+      next: (data: any) => {
+        this.userData = data.content;
+      },
+      error: (err) => {
+        console.log(err);
+        this.msg = err.error.message;
+        this.isInvalid = true;
+      },
+      complete: () => {
+        this.loginAuth.setData(this.userData);
+        this.router.navigate(['/dashboard']);
+        sub.unsubscribe();
+      }
+    })
   }
 
 

@@ -22,8 +22,8 @@
 
     <div class="right">
       <button mat-button [matMenuTriggerFor]="menu" class="user">
-        <img src="./assets/user.jpg" alt="" class="user-image" />
-        <span>User Name</span>
+        <img src="../../assets/user.jpg" alt="" class="user-image" />
+        <span>{{ loginAuth.getUser().name }}</span>
       </button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item (click)="loginAuth.logOut()">

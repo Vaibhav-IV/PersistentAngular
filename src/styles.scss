@@ -27,3 +27,7 @@ html {
         font-size: 15px;
     }
 }
+
+mat-drawer .mat-drawer-inner-container::-webkit-scrollbar {
+    display: none;
+}

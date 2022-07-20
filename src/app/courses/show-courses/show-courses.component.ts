@@ -4,6 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort, Sort } from '@angular/material/sort';
 import { ApiService } from 'src/app/services/api.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 interface showCourses {
@@ -27,12 +28,15 @@ interface showCourses {
   styleUrls: ['./show-courses.component.scss']
 })
 export class ShowCoursesComponent implements OnInit {
-
+  role!: number;
   courses: any;
   displayedColumns: string[] = ["UID", "Course_Title", "Code", "Trainer", "Duration", "In_Library", "Status", "Trainees", "Batch", "Queries", "icon"]
 
   constructor(private _liveAnnouncer: LiveAnnouncer,
-    private api: ApiService) { }
+    private api: ApiService,
+    private loginAuth: AuthService) {
+    this.role = loginAuth.getRole();
+  }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -54,7 +58,7 @@ export class ShowCoursesComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.courses.filter = filterValue.trim().toLowerCase();
   }
-  
+
   announceSortChange(sortState: Sort) {
 
     if (sortState.direction) {

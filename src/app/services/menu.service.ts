@@ -19,14 +19,22 @@ export class MenuService {
           { name: 'reports', path: './reports' },
           { name: 'settings', path: './settings' },
           { name: 'meetings', path: './meetings' },
-          { name: 'users', path: './users',children:[
-            { name: 'addUsers', path: './addUsers' },
-            { name: 'showUsers', path: './showUsers' }
-          ] },
-          { name: 'courses', path: './courses',children:[
-            { name: 'addCourses', path: './addCourses' },
-            { name: 'showCourses', path: './showCourses' }
-          ] }
+          {
+            name: 'users', path: './users', children: [
+              { name: 'addUsers', path: './addUsers' },
+              { name: 'showUsers', path: './showUsers' }
+            ]
+          },
+          {
+            name: 'courses', path: './courses', children: [
+              { name: 'addCourses', path: './addCourses' },
+              { name: 'showCourses', path: './showCourses' }
+            ]
+          },
+          { name: 'queries', path: './queries' },
+          { name: 'notifications', path: './notifications' },
+          { name: 'course-reports', path: './course-reports' },
+
         ]
       }
     ];

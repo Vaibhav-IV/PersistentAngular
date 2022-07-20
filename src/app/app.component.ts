@@ -13,11 +13,12 @@ import { AuthService } from './services/auth.service';
 export class AppComponent {
   title = 'PersistentAngular';
   sideBarOpen = true;  //to chnage the default position of sidebar open or closed
-  
+
   constructor(private observer: BreakpointObserver, private router: Router, public loginAuth: AuthService) { }
 
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
+
 
   sideBarToggler() {
     this.sideBarOpen = !this.sideBarOpen;

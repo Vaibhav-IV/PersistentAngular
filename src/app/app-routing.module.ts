@@ -16,36 +16,43 @@ import { ReportsComponent } from './reports/reports.component';
 import { SettingsComponent } from './settings/settings.component';
 import { AddUsersComponent } from './users/add-users/add-users.component';
 import { ShowUsersComponent } from './users/show-users/show-users.component';
-import { UsersComponent } from './users/users.component'; 
+import { UsersComponent } from './users/users.component';
 import { AuthGuard } from './guards/auth.guard';
 import { IfLoggedInGuard } from './guards/if-logged-in.guard';
 import { LoginComponent } from './login/login.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { QueriesComponent } from './queries/queries.component';
+import { CourseReportsComponent } from './course-reports/course-reports.component';
 
 const routes: Routes = [
-  {path: '' , redirectTo: 'home' , pathMatch: 'full'},
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', redirectTo: 'dashboard' },
   { path: 'login', component: LoginComponent, canActivate: [IfLoggedInGuard] },
-  {path: 'home' , component: HomeComponent, canActivate: [AuthGuard]  },
-  {path: 'home/announcements' , component: AnnouncementsComponent},
-  {path: 'home/batches' , component: BatchesComponent},
-  {path: 'home/sessions' , component: ClassroomSessionsComponent},
-  {path: 'home/courses' , component: CoursesComponent,children:[
-      {path: 'addCourses' , component: AddCoursesComponent},
-      {path: 'showCourses' , component: ShowCoursesComponent},
-  ] },
-  // {path: 'courses/addCourses' , component: AddCoursesComponent},
-  // {path: 'courses/showCourses' , component: ShowCoursesComponent},
-  {path: 'dashboard' , component: DashboardComponent, canActivate: [AuthGuard]},
-  {path: 'home/evaluations' , component: EvaluationsComponent},
-  {path: 'home/learnings' , component: LearningObjectsComponent},
-  {path: 'home/meetings' , component: MeetingsComponent,}, //jst write home/meetings but in sidenav route link write /home/meetings.. in sidenav use extra '/' this
-  {path: 'home/reports' , component: ReportsComponent,},
-  {path: 'home/settings' , component: SettingsComponent,},
-  {path: 'home/users' , component: UsersComponent, children:[
-    {path: 'addUsers' , component: AddUsersComponent},
-    {path: 'showUsers' , component: ShowUsersComponent},
-  ]},
-  // {path: 'users/addUsers' , component: AddUsersComponent},
-  // {path: 'users/showUsers' , component: ShowUsersComponent},
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'home/announcements', component: AnnouncementsComponent, canActivate: [AuthGuard] },
+  { path: 'home/batches', component: BatchesComponent, canActivate: [AuthGuard] },
+  { path: 'home/sessions', component: ClassroomSessionsComponent, canActivate: [AuthGuard] },
+  {
+    path: 'home/courses', component: CoursesComponent, children: [
+      { path: 'addCourses', component: AddCoursesComponent, canActivate: [AuthGuard] },
+      { path: 'showCourses', component: ShowCoursesComponent, canActivate: [AuthGuard] },
+    ]
+  },
+  { path: 'home/evaluations', component: EvaluationsComponent, canActivate: [AuthGuard] },
+  { path: 'home/learnings', component: LearningObjectsComponent, canActivate: [AuthGuard] },
+  { path: 'home/meetings', component: MeetingsComponent, canActivate: [AuthGuard] },
+  { path: 'home/reports', component: ReportsComponent, canActivate: [AuthGuard] },
+  { path: 'home/settings', component: SettingsComponent, canActivate: [AuthGuard] },
+  {
+    path: 'home/users', component: UsersComponent, children: [
+      { path: 'addUsers', component: AddUsersComponent, canActivate: [AuthGuard] },
+      { path: 'showUsers', component: ShowUsersComponent, canActivate: [AuthGuard] },
+    ]
+  },
+  { path: 'home/notifications', component: NotificationsComponent, canActivate: [AuthGuard] },
+  { path: 'home/queries', component: QueriesComponent, canActivate: [AuthGuard] },
+  { path: 'home/course-reports', component: CourseReportsComponent, canActivate: [AuthGuard] },
+  { path: '**', redirectTo: '/login' },
 ];
 
 @NgModule({
