@@ -39,7 +39,7 @@ export class CardsComponent implements OnInit {
 
     this.studentcardsData1 = [
       { title: "LEADERBOARD", data: "RANK:896 POINT:89", icon: "fa fa-star" },
-      { title: "LAST LOGIN", data: "8-JUL-2022 03:39PM", icon: "fa fa-sign-out" },
+      { title: "LAST LOGIN", data: "8-JUL-2022 03:39PM", icon: "fas fa-sign-in-alt" },
     ]
   }
 
