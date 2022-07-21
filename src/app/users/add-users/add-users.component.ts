@@ -18,7 +18,7 @@ export class AddUsersComponent implements OnInit {
 
   //for autocomplte or searching
   myControl = new FormControl('');
-  options: User[] = [{name: 'ABC'}, {name: 'XYZ'}, {name: 'BLAH'}];
+  options: User[] = [{ name: 'ABC' }, { name: 'XYZ' }, { name: 'BLAH' }];
   filteredOptions!: Observable<User[]>;
 
   addUserForm!: FormGroup;
@@ -28,47 +28,29 @@ export class AddUsersComponent implements OnInit {
 
   ngOnInit(): void {
     this.addUserForm = this.formBuilder.group({
-      userName: ['', Validators.required],
-      userEmail: ['', Validators.required],
-      mobile: ['', Validators.required],
-      password: ['', Validators.required],
-      confirmPassword: ['', Validators.required],
+      name: ['', Validators.required],
+      email: ['', Validators.required],
+      mobileNo: ['', Validators.required],
+      passWord: ['', Validators.required],
       role: ['', Validators.required],
-      reportingTo: ['', Validators.required],
-    }
-      //CustomValidatorsService.mustMatch('password', 'confirmPassword') // insert here
-    )
-
-    //for autocomplte or searching
-    this.filteredOptions = this.myControl.valueChanges.pipe(
-      startWith(''),
-      map(value => {
-        const name = typeof value === 'string' ? value : value?.name;
-        return name ? this._filter(name as string) : this.options.slice();
-      }),
-    );
-
-  }
-  displayFn(user: User): string {
-    return user && user.name ? user.name : '';
-  }
-
-  private _filter(name: string): User[] {
-    const filterValue = name.toLowerCase();
-
-    return this.options.filter(option => option.name.toLowerCase().includes(filterValue));
+      dept_name: ['', Validators.required],
+      reports_to: ['', Validators.required],
+      status: ['', Validators.required],
+    });
   }
 
 
   addUser() {
-    console.log(this.addUserForm.value)
+    // console.log(this.addUserForm.value)
     if (this.addUserForm.valid) {
       this.api.postUser(this.addUserForm.value).subscribe({
         next: (res) => {
           alert("User is added succesfully");
           this.addUserForm.reset();
         },
-        error: () => {
+        error: (err) => {
+          console.log(err);
+          
           alert("Error while adding the user")
         }
       })

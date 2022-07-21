@@ -16,33 +16,34 @@ export class AddCoursesComponent implements OnInit {
 
   ngOnInit(): void {
     this.addCourseForm = this.formBuilder.group({
-      courseType: ['', Validators.required],
-      courseTitle: ['', Validators.required],
-      courseCode: ['', Validators.required],
+      name: ['', Validators.required],
+      category_id: ['', Validators.required],
+      code: ['', Validators.required],
       description: ['', Validators.required],
-      startDate: ['', Validators.required],
-      endDate: ['', Validators.required],
-      duration: ['', Validators.required],
-      courseCriteria: ['', Validators.required],
-      courseExtension: ['', Validators.required],
-      trainer: ['', Validators.required],
-      trainerName: ['', Validators.required],
-      courseStatus: ['', Validators.required],
+      'start-date': ['', Validators.required],
+      'end-date': ['', Validators.required],
+      extension: ['', Validators.required],
+      teacher_id: ['', Validators.required],
+      status: ['', Validators.required],
     })
   }
 
   addCourse() {
-    console.log(this.addCourseForm.value)
-    if(this.addCourseForm.valid){
+    if (this.addCourseForm.valid) {
       this.api.postCourse(this.addCourseForm.value).subscribe({
-        next:(res) =>{
+        next: (data) => {
+          console.log(data);
           alert("Course Added Succesfully");
           this.addCourseForm.reset();
         },
-        error:() => {
-          alert("Adding Course Incomplete: Error 404")
+        error: () => {
+          alert("Adding Course Incomplete")
+        },
+        complete: () => {
         }
       })
+    } else {
+      alert('form fields not valid');
     }
   }
 

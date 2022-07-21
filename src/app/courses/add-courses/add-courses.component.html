@@ -1,7 +1,23 @@
 <h1>Add courses details</h1>
 <mat-divider></mat-divider>
 
-<form [formGroup]="addCourseForm" class="formbox">
+<form [formGroup]="addCourseForm" class="formbox" ngNativeValidate (submit)="addCourse()">
+
+
+  <div class="row">
+    <div class="col-md-2 pt-3 subtitle">
+      Course Title
+    </div>
+    <div class="col-md-4">
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Course Title</mat-label>
+          <input formControlName="name" type="text" matInput placeholder="Enter Course Title" required>
+        </mat-form-field>
+      </p>
+    </div>
+  </div>
+
 
   <div class="row">
     <div class="col-md-2 pt-3 subtitle">
@@ -12,28 +28,12 @@
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Select Course Type</mat-label>
-          <mat-select formControlName="courseType" placeholder="Enter Course Type">
+          <mat-select formControlName="category_id" placeholder="Enter Course Type" aria-required="true">
             <mat-option label="--select Course --"></mat-option>
-            <mat-option value="Course 1">course1</mat-option>
-            <mat-option value="Course 2">Course 2</mat-option>
-            <mat-option value="Course 3">Course 3</mat-option>
+            <mat-option value="1">Programing</mat-option>
+            <mat-option value="2">Health</mat-option>
+            <mat-option value="3">Sales & Marketing</mat-option>
           </mat-select>
-        </mat-form-field>
-      </p>
-    </div>
-  </div>
-
-
-  <div class="row">
-    <div class="col-md-2 pt-3 subtitle">
-      Course Title
-    </div>
-
-    <div class="col-md-4">
-      <p>
-        <mat-form-field appearance="outline">
-          <mat-label>Course Title</mat-label>
-          <input formControlName="courseTitle" type="text" matInput placeholder="Enter Course Title">
         </mat-form-field>
       </p>
     </div>
@@ -48,7 +48,7 @@
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Course Code</mat-label>
-          <input matInput formControlName="courseCode" value="122" type="number" placeholder="Add course code">
+          <input matInput formControlName="code" value="122" type="number" placeholder="Add course code">
         </mat-form-field>
       </p>
     </div>
@@ -79,7 +79,7 @@
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Choose a date(Available from)</mat-label>
-          <input formControlName="startDate" matInput [matDatepicker]="picker">
+          <input formControlName="start-date" matInput [matDatepicker]="picker">
           <mat-hint>MM/DD/YYYY</mat-hint>
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
@@ -98,50 +98,10 @@
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Choose a date(Available Till)</mat-label>
-          <input formControlName="endDate" matInput [matDatepicker]="picker">
+          <input formControlName="end-date" matInput [matDatepicker]="picker1">
           <mat-hint>MM/DD/YYYY</mat-hint>
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-      </p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-2 pt-3 subtitle">
-      Duration
-    </div>
-
-    <div class="col-md-4">
-      <p>
-        <mat-form-field appearance="outline">
-          <mat-label>Select Duration</mat-label>
-          <mat-select formControlName="duration" placeholder="Please Select Duration">
-            <mat-option label="--select Duration --"></mat-option>
-            <mat-option value="Duration 1">Duration 1</mat-option>
-            <mat-option value="Duration 2">Duration 2</mat-option>
-            <mat-option value="Duration 3">Duration 3</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </p>
-    </div>
-  </div>
-
-
-  <div class="row">
-    <div class="col-md-2 pt-3 subtitle">
-      Course Complete Criteria </div>
-
-    <div class="col-md-4">
-      <p>
-        <mat-form-field appearance="outline">
-          <mat-label>Course Complete Criteria</mat-label>
-          <mat-select formControlName="courseCriteria" placeholder="Please select Course Complete Criteria">
-            <mat-option label="--select Criteria --"></mat-option>
-            <mat-option value="Criteria 1">Criteria 1</mat-option>
-            <mat-option value="Criteria 2">Criteria 2</mat-option>
-            <mat-option value="Criteria 3">Criteria 3</mat-option>
-          </mat-select>
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
         </mat-form-field>
       </p>
     </div>
@@ -157,17 +117,17 @@
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Course Extension</mat-label>
-          <mat-select formControlName="courseExtension" placeholder="Please select Course Extension">
+          <mat-select formControlName="extension" placeholder="Please select Course Extension">
             <mat-option label="--select Extension --"></mat-option>
-            <mat-option value="Extension 1">Extension 1</mat-option>
-            <mat-option value="Extension 2">Extension 2</mat-option>
-            <mat-option value="Extension 3">Extension 3</mat-option>
+            <mat-option value="Available">Available</mat-option>
+            <mat-option value="Request">Request</mat-option>
+            <mat-option value="Not Available">Not Available</mat-option>
           </mat-select>
         </mat-form-field>
       </p>
-
     </div>
   </div>
+
 
   <div class="row">
     <div class="col-md-2 pt-3 subtitle">
@@ -178,11 +138,11 @@
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Assign Trainer</mat-label>
-          <mat-select formControlName="trainer" placeholder="Please select Trainer">
+          <mat-select formControlName="teacher_id" placeholder="Please select Trainer">
             <mat-option label="--select Trainer --"></mat-option>
-            <mat-option value="Trainer 1">Trainer 1</mat-option>
-            <mat-option value="Trainer 2">Trainer 2</mat-option>
-            <mat-option value="Trainer 3">Trainer 3</mat-option>
+            <mat-option value="1">Trainer 1</mat-option>
+            <mat-option value="2">Trainer 2</mat-option>
+            <mat-option value="3">Trainer 3</mat-option>
           </mat-select>
         </mat-form-field>
       </p>
@@ -190,20 +150,6 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-2 pt-3 subtitle">
-      Display Trainer Name
-    </div>
-
-    <div class="col-md-4">
-      <p>
-        <mat-form-field appearance="outline">
-          <mat-label>Display Trainer Name</mat-label>
-          <input formControlName="trainerName" matInput placeholder="Trainer">
-        </mat-form-field>
-      </p>
-    </div>
-  </div>
 
   <div class="row">
     <div class="col-md-2 pt-3 subtitle">
@@ -215,7 +161,7 @@
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Course Status</mat-label>
-          <mat-select formControlName="courseStatus" placeholder="Please select Course Status">
+          <mat-select formControlName="status" placeholder="Please select Course Status">
             <mat-option label="--select Status --"></mat-option>
             <mat-option value="Active">Active</mat-option>
             <mat-option value="Deactive">Deactive</mat-option>
@@ -225,9 +171,8 @@
     </div>
   </div>
 
+  <div class="example-label">
+    <button mat-raised-button color="primary" class="example-label">Submit</button>
+  </div>
 
 </form>
-
-<div class="example-label">
-  <button  mat-raised-button color="primary" (click)="addCourse()" class="example-label">Submit</button>
-</div>

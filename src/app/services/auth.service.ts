@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { urls } from '../shared/constants';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,7 @@ export class AuthService {
 
   authenticate(email: string, password: string) {
     const uData = { email: email, password: password };
-    const url = 'http://localhost:8080/login';
-    return this.http.post(url, uData);
+    return this.http.post(urls.loginUrl.login, uData);
   }
 
   setData(userData: any) {

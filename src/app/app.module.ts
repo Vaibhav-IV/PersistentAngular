@@ -1,3 +1,4 @@
+import { MAT_DATE_LOCALE } from '@angular/material/core'
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -119,7 +120,9 @@ import { CourseReportsComponent } from './course-reports/course-reports.componen
     LayoutModule,
     CommonModule
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
