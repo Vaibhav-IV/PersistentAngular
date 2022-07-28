@@ -5,9 +5,9 @@
         <h2>{{ key }}</h2>
         <p class="">{{dashboardData[key]}}</p>
       </div>
-      <!-- <div class="rightPart">
+      <div class="rightPart" *ngFor="let cardData of cardsData">
         <i ngClass="{{ cardData.icon }}"></i>
-      </div> -->
+      </div>
     </div>
   </div>
 </div>

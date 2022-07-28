@@ -58,6 +58,9 @@ import { LoginComponent } from './login/login.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { QueriesComponent } from './queries/queries.component';
 import { CourseReportsComponent } from './course-reports/course-reports.component';
+import { ViewCourseComponent } from './courses/view-course/view-course.component';
+import { DialogComponent } from './dialog/dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -86,7 +89,9 @@ import { CourseReportsComponent } from './course-reports/course-reports.componen
     LoginComponent,
     NotificationsComponent,
     QueriesComponent,
-    CourseReportsComponent
+    CourseReportsComponent,
+    ViewCourseComponent,
+    DialogComponent
 
   ],
   imports: [
@@ -116,6 +121,7 @@ import { CourseReportsComponent } from './course-reports/course-reports.componen
     MatAutocompleteModule,
     MatBadgeModule,
     MatProgressBarModule,
+    MatDialogModule,
     NgxMatSelectSearchModule,
     LayoutModule,
     CommonModule

@@ -20,6 +20,8 @@ export class ShowRoutesByRolesService {
     '/home/reports',
     '/home/users/addUsers',
     '/home/users/showUsers',
+    '/home/viewCourse',
+    '/home/settings'
   ];
 
   teacherRoutes = [

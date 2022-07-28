@@ -23,6 +23,7 @@ import { LoginComponent } from './login/login.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { QueriesComponent } from './queries/queries.component';
 import { CourseReportsComponent } from './course-reports/course-reports.component';
+import { ViewCourseComponent } from './courses/view-course/view-course.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -52,6 +53,7 @@ const routes: Routes = [
   { path: 'home/notifications', component: NotificationsComponent, canActivate: [AuthGuard] },
   { path: 'home/queries', component: QueriesComponent, canActivate: [AuthGuard] },
   { path: 'home/course-reports', component: CourseReportsComponent, canActivate: [AuthGuard] },
+  {path: 'home/viewCourse' , component: ViewCourseComponent,canActivate: [AuthGuard]},
   { path: '**', redirectTo: '/login' },
 ];
 

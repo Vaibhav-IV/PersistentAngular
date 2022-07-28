@@ -9,23 +9,23 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class CardsComponent implements OnInit {
   role!: number;
-  teacherCardsData!: { title: string, count: number, icon: string }[];
-  studentcardsData1!: { title: string, data: string, icon: string }[];
-  studentcardsData!: { title: string, count: number, icon: string }[];
-  cardsData!: { title: string, count: number, icon: string }[];
+  // teacherCardsData!: { title: string, count: number, icon: string }[];
+  // studentcardsData1!: { title: string, data: string, icon: string }[];
+  // studentcardsData!: { title: string, count: number, icon: string }[];
+  cardsData!: {icon: string }[];
   constructor(public loginAuth: AuthService,
     private api: ApiService) {
     
       this.role = loginAuth.getRole();
-    // this.cardsData = [
-    //   { title: "registered trainees", count: 2718, icon: "fas fa-users" },
-    //   { title: "enrolled trainees", count: 2321, icon: "fas fa-user-check" },
-    //   { title: "courses", count: 27, icon: "fas fa-book" },
-    //   { title: "annoucements", count: 272, icon: "fas fa-bullhorn" },
-    //   { title: "sessions - 30 days", count: 272727, icon: "fas fa-poll" },
-    //   { title: "unique logins - 30 days", count: 1262, icon: "fas fa-sign-in-alt" },
-    //   { title: "active users - 30 days", count: 1262, icon: "fas fa-check-double" },
-    // ]
+    this.cardsData = [
+      {icon: "fas fa-users" },
+      // { icon: "fas fa-user-check" },
+      // {  icon: "fas fa-book" },
+      // { title: "annoucements", count: 272, icon: "fas fa-bullhorn" },
+      // { title: "sessions - 30 days", count: 272727, icon: "fas fa-poll" },
+      // { title: "unique logins - 30 days", count: 1262, icon: "fas fa-sign-in-alt" },
+      // { title: "active users - 30 days", count: 1262, icon: "fas fa-check-double" },
+    ]
     // this.teacherCardsData = [
     //   { title: "COURSES", count: 0, icon: "fas fa-graduation-cap" },
     //   { title: "ENROLLED USER", count: 0, icon: "fas fa-user-alt" },

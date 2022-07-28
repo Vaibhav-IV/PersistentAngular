@@ -34,6 +34,7 @@ export class MenuService {
           { name: 'Queries', path: './queries' },
           { name: 'Notifications', path: './notifications' },
           { name: 'Course Reports', path: './course-reports' },
+          { name: 'View Course', path: './viewCourse' }
 
         ]
       }
