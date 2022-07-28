@@ -76,9 +76,9 @@
           <mat-label>Role</mat-label>
           <mat-select formControlName="role">
             <mat-option label="--select role --"></mat-option>
-            <mat-option value="admin">Admin</mat-option>
-            <mat-option value="teacher">Teacher</mat-option>
-            <mat-option value="student">Student</mat-option>
+            <mat-option value="Admin">Admin</mat-option>
+            <mat-option value="Teacher">Teacher</mat-option>
+            <mat-option value="Student">Student</mat-option>
           </mat-select>
         </mat-form-field>
       </p>
@@ -93,12 +93,14 @@
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Reporting To</mat-label>
-          <mat-select formControlName="reports_to">
-            <mat-option label="--select senior --"></mat-option>
-            <mat-option value="admin@gmail.com">Admin</mat-option>
-            <mat-option value="teacher@gmail.com">Teacher</mat-option>
-            <mat-option value="tejas@gmail.com">Student</mat-option>
-          </mat-select>
+          <input formControlName="reports_to" type="text" matInput placeholder="enter email" list="emails"
+            autocomplete="off" id="reports_to">
+          <datalist id="emails">
+            <option *ngFor="let item of seniors" value="{{ item.email }}">
+              {{ item.name }} -
+              {{ item.role_name }}
+            </option>
+          </datalist>
         </mat-form-field>
       </p>
     </div>

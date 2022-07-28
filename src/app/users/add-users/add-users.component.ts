@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
-import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
 
-//for autocomplte or searching
-export interface User {
+export interface Teachers {
   name: string;
+  email: string
 }
 
 @Component({
@@ -16,13 +14,9 @@ export interface User {
 })
 export class AddUsersComponent implements OnInit {
 
-  //for autocomplte or searching
-  myControl = new FormControl('');
-  options: User[] = [{ name: 'ABC' }, { name: 'XYZ' }, { name: 'BLAH' }];
-  filteredOptions!: Observable<User[]>;
 
   addUserForm!: FormGroup;
-
+  seniors!: any[];
   constructor(private formBuilder: FormBuilder,
     private api: ApiService) { }
 
@@ -37,30 +31,52 @@ export class AddUsersComponent implements OnInit {
       reports_to: ['', Validators.required],
       status: ['', Validators.required],
     });
-  }
 
-  get name(){
-    return this.addUserForm.controls['name']
+    const sub = this.api.getUsers().subscribe({
+      next: (res) => {
+        this.seniors = res.content;
+      },
+      complete: () => {
+        sub.unsubscribe();
+      },
+      error: (err) => {
+        alert("something went wrong");
+      }
+    });
+
+
   }
 
   addUser() {
-    // console.log(this.addUserForm.value)
     if (this.addUserForm.valid) {
+      const getRoleOfReportingToObj = this.seniors.find((item) => {
+        return item.email == this.addUserForm.value.reports_to;
+      })
+      const getRoleOfReportingTo = getRoleOfReportingToObj.role_name;
+
+      const formValues = this.addUserForm.value;
+      if ((formValues.role == "Student" && getRoleOfReportingTo == "Student") ||
+        (formValues.role == "Teacher" && getRoleOfReportingTo == "Student") ||
+        (formValues.role == "Admin" && getRoleOfReportingTo == "Student")) {
+        alert("You can not report to student");
+        return 0;
+      }
+      if ((formValues.role == "Admin" && getRoleOfReportingTo == "Teacher")) {
+        alert("Role Admin can not report to Teacher")
+        return 0;
+      }
       this.api.postUser(this.addUserForm.value).subscribe({
         next: (res) => {
           alert("User is added succesfully");
-
           this.addUserForm.reset();
-          this.addUserForm.markAsPristine();
-          this.addUserForm.markAsUntouched();
         },
         error: (err) => {
           console.log(err);
           alert("Error while adding the user")
         }
-      })
+      });
     }
+    return;
   }
 
 }
-
