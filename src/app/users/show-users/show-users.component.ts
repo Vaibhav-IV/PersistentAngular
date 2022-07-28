@@ -29,7 +29,9 @@ export class ShowUsersComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private _liveAnnouncer: LiveAnnouncer, private http: HttpClient, private api: ApiService) { }
+  constructor(private _liveAnnouncer: LiveAnnouncer,
+     private http: HttpClient, 
+     private api: ApiService) { }
 
   ngOnInit(): void {
 

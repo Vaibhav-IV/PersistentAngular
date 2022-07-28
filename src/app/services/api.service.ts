@@ -20,7 +20,6 @@ export class ApiService {
     return this.http.get<any>(urls.courseUrls.getAll);
   }
 
-
   // todo user operaitons
 
   postUser(data: any) {
@@ -30,4 +29,10 @@ export class ApiService {
   getUsers() {
     return this.http.get<any>(urls.userUrls.getAll);
   }
+
+  getDashboard(){
+    return this.http.get<any>(urls.dashboardUrls.dashboard)
+  }
+
+  
 }

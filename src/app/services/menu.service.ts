@@ -11,29 +11,29 @@ export class MenuService {
     const menu = [
       {
         name: 'home', path: './home', children: [
-          { name: 'announcements', path: './announcements' },
-          { name: 'batches', path: './batches' },
-          { name: 'sessions', path: './sessions' },
-          { name: 'evaluations', path: './evaluations' },
-          { name: 'learnings', path: './learnings' },
-          { name: 'reports', path: './reports' },
-          { name: 'settings', path: './settings' },
-          { name: 'meetings', path: './meetings' },
+          { name: 'Announcements', path: './announcements' },
+          { name: 'Batches', path: './batches' },
+          { name: 'Sessions', path: './sessions' },
+          { name: 'Evaluations', path: './evaluations' },
+          { name: 'Learnings', path: './learnings' },
+          { name: 'Reports', path: './reports' },
+          { name: 'Settings', path: './settings' },
+          { name: 'Meetings', path: './meetings' },
           {
             name: 'users', path: './users', children: [
-              { name: 'addUsers', path: './addUsers' },
-              { name: 'showUsers', path: './showUsers' }
+              { name: 'Add Users', path: './addUsers' },
+              { name: 'Show Users', path: './showUsers' }
             ]
           },
           {
             name: 'courses', path: './courses', children: [
-              { name: 'addCourses', path: './addCourses' },
-              { name: 'showCourses', path: './showCourses' }
+              { name: 'Add Courses', path: './addCourses' },
+              { name: 'Show Courses', path: './showCourses' }
             ]
           },
-          { name: 'queries', path: './queries' },
-          { name: 'notifications', path: './notifications' },
-          { name: 'course-reports', path: './course-reports' },
+          { name: 'Queries', path: './queries' },
+          { name: 'Notifications', path: './notifications' },
+          { name: 'Course Reports', path: './course-reports' },
 
         ]
       }

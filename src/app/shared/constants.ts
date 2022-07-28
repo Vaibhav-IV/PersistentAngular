@@ -12,6 +12,9 @@ export const urls = {
     userUrls: {
         add: `${host}/addUser`,
         getAll: `${host}/getAllUser`,
+    },
+    dashboardUrls: {
+        dashboard: `${host}/dashboard`
     }
 
 }

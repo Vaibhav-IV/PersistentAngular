@@ -39,6 +39,9 @@ export class AddUsersComponent implements OnInit {
     });
   }
 
+  get name(){
+    return this.addUserForm.controls['name']
+  }
 
   addUser() {
     // console.log(this.addUserForm.value)
@@ -46,11 +49,13 @@ export class AddUsersComponent implements OnInit {
       this.api.postUser(this.addUserForm.value).subscribe({
         next: (res) => {
           alert("User is added succesfully");
+
           this.addUserForm.reset();
+          this.addUserForm.markAsPristine();
+          this.addUserForm.markAsUntouched();
         },
         error: (err) => {
           console.log(err);
-          
           alert("Error while adding the user")
         }
       })

@@ -8,17 +8,13 @@ import { AuthService } from 'src/app/services/auth.service';
 
 
 interface showCourses {
-  UID: number,
-  Course_Title: string,
-  Code: string,
-  Trainer: string,
-  Duration: string,
-  In_Library: string,
-  Status: string,
-  Trainees: number;
-  Batch: number,
-  Queries: number,
-  icon: string
+  date: string,
+  code: string,
+  till: string,
+  name: string,
+  students_Enrolled: string;
+  instructor: string,
+  status: string,
 }
 
 
@@ -30,7 +26,7 @@ interface showCourses {
 export class ShowCoursesComponent implements OnInit {
   role!: number;
   courses: any;
-  displayedColumns: string[] = ["UID", "Course_Title", "Code", "Trainer", "Duration", "In_Library", "Status", "Trainees", "Batch", "Queries", "icon"]
+  displayedColumns: string[] = ["code", "name", "date", "till", "instructor", "students_Enrolled", "status"]
 
   constructor(private _liveAnnouncer: LiveAnnouncer,
     private api: ApiService,
@@ -43,10 +39,11 @@ export class ShowCoursesComponent implements OnInit {
 
   ngOnInit(): void {
     this.api.getCourses().subscribe({
-      next: (res) => {
-        this.courses = new MatTableDataSource<showCourses>(res);
+      next: (data) => {
+        this.courses = new MatTableDataSource<showCourses>(data.content);
         this.courses.paginator = this.paginator;
         this.courses.sort = this.sort;
+        console.log(data.content)
       },
       error: (error) => {
         console.log(error);

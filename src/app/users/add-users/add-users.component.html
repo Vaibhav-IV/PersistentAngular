@@ -1,7 +1,7 @@
 <h1>Add Users details</h1>
 <mat-divider></mat-divider>
 
-<form [formGroup]="addUserForm" class="p-5 ml-3 formbox" (ngSubmit)="addUser()">
+<form [formGroup]="addUserForm" class="p-5 ml-3 formbox" (click)="addUser()"  type="reset">
 
   <div class="row">
     <div class="col-md-2 pt-3 subtitle">
@@ -11,7 +11,11 @@
       <p>
         <mat-form-field appearance="outline">
           <mat-label> Name</mat-label>
-          <input formControlName="name" type="text" matInput placeholder="Enter User Name">
+          <input formControlName="name" type="text" [pattern]="'[a-zA-Z ]*'" matInput placeholder="Enter User Name">
+          <mat-error>
+            Enter only alphabates
+        </mat-error>
+        <!-- <mat-error *ngIf="addUserForm.invalid">The first name is required</mat-error> -->
         </mat-form-field>
       </p>
     </div>

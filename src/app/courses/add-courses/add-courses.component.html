@@ -3,7 +3,6 @@
 
 <form [formGroup]="addCourseForm" class="formbox" ngNativeValidate (submit)="addCourse()">
 
-
   <div class="row">
     <div class="col-md-2 pt-3 subtitle">
       Course Title
@@ -12,7 +11,10 @@
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Course Title</mat-label>
-          <input formControlName="name" type="text" matInput placeholder="Enter Course Title" required>
+          <input formControlName="name" type="text" matInput placeholder="Enter Course Title" [pattern]="'[a-zA-Z ]*'" required>
+          <mat-error>
+            Enter only alphabates
+        </mat-error>
         </mat-form-field>
       </p>
     </div>
@@ -64,7 +66,10 @@
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Description</mat-label>
-          <textarea formControlName="description" rows="10" matInput></textarea>
+          <textarea formControlName="description" rows="5" matInput [pattern]="'[a-zA-Z ]*'"></textarea>
+          <mat-error>
+            Enter only alphabates
+        </mat-error>
         </mat-form-field>
       </p>
     </div>

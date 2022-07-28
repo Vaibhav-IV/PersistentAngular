@@ -10,13 +10,14 @@ import { ApiService } from 'src/app/services/api.service';
 export class AddCoursesComponent implements OnInit {
 
   addCourseForm!: FormGroup
+ // errors = errorMessages;
 
   constructor(private formBuilder: FormBuilder,
     private api: ApiService) { }
 
   ngOnInit(): void {
     this.addCourseForm = this.formBuilder.group({
-      name: ['', Validators.required],
+      name: ['', Validators.required ],
       category_id: ['', Validators.required],
       code: ['', Validators.required],
       description: ['', Validators.required],
