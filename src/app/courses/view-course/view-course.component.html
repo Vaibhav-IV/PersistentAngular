@@ -1,1 +1,12 @@
-<button mat-button (click)="openDialog()">Launch dialog</button>
+<div class="container">
+    <div class="headerdiv">
+       <h1>Python</h1>
+        <button mat-raised-button color="primary" (click)="openDialog()">Add Chapter/Modules</button>
+
+    </div>
+    <div class="main-content">
+        <mat-icon (click)="openDialog()">add</mat-icon>
+        <h3 ><a routerLink="/home/viewCourse">Please add chapter/Module</a></h3>
+    </div>
+
+</div>
