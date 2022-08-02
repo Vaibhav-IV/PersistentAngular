@@ -9,15 +9,16 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class AddCoursesComponent implements OnInit {
 
-  addCourseForm!: FormGroup
- // errors = errorMessages;
+  addCourseForm!: FormGroup;
+  teacherList: any = [];
+  // errors = errorMessages;
 
   constructor(private formBuilder: FormBuilder,
     private api: ApiService) { }
 
   ngOnInit(): void {
     this.addCourseForm = this.formBuilder.group({
-      name: ['', Validators.required ],
+      name: ['', Validators.required],
       category_id: ['', Validators.required],
       code: ['', Validators.required],
       description: ['', Validators.required],
@@ -26,7 +27,25 @@ export class AddCoursesComponent implements OnInit {
       extension: ['', Validators.required],
       teacher_id: ['', Validators.required],
       status: ['', Validators.required],
+    });
+
+    var teacherListObj;
+    this.api.getUsers().subscribe({
+      next: (data) => {
+        teacherListObj = data.content;
+        console.log(teacherListObj);
+        // push to teacherList if userrole is teacher
+        teacherListObj.forEach((element: any) => {
+          if (element.role_name == 'Teacher') {
+            this.teacherList.push(element);
+          }
+        })
+      },
+      error: () => {
+        alert("Error in getting teachers");
+      }
     })
+
   }
 
   addCourse() {

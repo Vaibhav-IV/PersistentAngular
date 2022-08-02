@@ -1,0 +1,47 @@
+::ng-deep .mat-dialog-container {
+    background: white !important;
+ }
+
+ ::ng-deep .mat-dialog-title{
+    color: black;
+ }
+
+ .subtitle{
+    color: black;
+ }
+
+ mat-form-field {
+    width: 250px;
+}
+
+ ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: black !important;
+}
+
+::ng-deep .mat-select-content{
+    width:2000px;
+    background-color: red;
+    font-size: 10px;   
+}
+
+::ng-deep .mat-select-value{
+    color: black;
+}
+
+::ng-deep .mat-form-field {
+    .mat-input-element {
+        color: slategray;
+    }
+    .mat-form-field-label {
+        color: rgb(9, 31, 200);
+    }
+    .mat-form-field-underline {
+        background-color: slategray;
+    }
+    .mat-form-field-ripple {
+        background-color: slategray;
+    }
+    .mat-form-field-required-marker {
+        color: slategray;
+    }
+}

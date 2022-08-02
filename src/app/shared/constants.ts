@@ -15,6 +15,12 @@ export const urls = {
     },
     dashboardUrls: {
         dashboard: `${host}/dashboard`
+    },
+    courseDetails:{
+        dummy: `${host}/dummy`
+    },
+    TopCourses:{
+        TopCourses: `${host}/TopCourses`
     }
 
 }

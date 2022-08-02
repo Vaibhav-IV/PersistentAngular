@@ -34,5 +34,18 @@ export class ApiService {
     return this.http.get<any>(urls.dashboardUrls.dashboard)
   }
 
+  //post and get partcular course data
+  getCourseDetails(id: string){
+    return this.http.get<any>(urls.courseDetails.dummy + id) //may need to use '/' this here
+  }
   
+  postCourseDetails(data:any){
+    return this.http.post<any>(urls.courseDetails.dummy,data)
+  }
+
+  //top5courses
+
+  getTopCourses(){
+    return this.http.get<any>(urls.TopCourses.TopCourses)
+  }
 }

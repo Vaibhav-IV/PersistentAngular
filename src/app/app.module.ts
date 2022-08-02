@@ -27,6 +27,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 
 
@@ -123,6 +124,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatProgressBarModule,
     MatDialogModule,
     NgxMatSelectSearchModule,
+    MatSnackBarModule,
     LayoutModule,
     CommonModule
   ],

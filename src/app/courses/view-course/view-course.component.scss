@@ -46,3 +46,43 @@
 ::ng-deep .mat-icon{
     font-size: 30px;
 }
+
+
+
+
+
+mat-accordion {
+
+    * {
+        color: black !important;
+    }
+
+    mat-expansion-panel {
+        box-shadow: 0px 0px 15px -5px rgb(196, 194, 194) !important;
+        background-color: #fff !important;
+
+        mat-expansion-panel-header {
+            mat-panel-title {
+
+                h2 {
+                    margin: 0 !important;
+                }
+            }
+        }
+
+        .panel-content {
+            a {
+                color: blue !important;
+                text-transform: capitalize;
+                font-size: 1rem !important;
+                display: flex;
+                justify-content: end;
+            }
+
+            p {
+                color: rgb(49, 49, 49) !important;
+            }
+        }
+    }
+
+}

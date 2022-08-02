@@ -32,23 +32,23 @@ export class PlotComponent implements OnInit {
   @ViewChild('mychart') mychart:any;
 
   ngAfterViewInit() {
-    this.canvas = this.mychart.nativeElement; 
+    this.canvas = this.mychart.nativeElement;
     this.ctx = this.canvas.getContext('2d');
 
     new Chart(this.ctx, {
       type: 'line',
       data: {
-          datasets: [{
-              label: 'Logins',
+        datasets: [{
+          label: 'Logins',
               data:graphdata[0].data,
-              backgroundColor: "rgb(115 185 243 / 65%)",
-              borderColor: "#007ee7",
-              fill: true,
-          }
+          backgroundColor: "rgb(115 185 243 / 65%)",
+          borderColor: "#007ee7",
+          fill: true,
+        }
         ],
-          labels: graphdata[0].labels
+        labels: graphdata[0].labels
       },
-  });
+    });
   }
 
   //end of plot comp

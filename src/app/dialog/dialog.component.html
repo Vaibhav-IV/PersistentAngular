@@ -1,5 +1,50 @@
 <h1 mat-dialog-title>Dialog with elements</h1>
-<div mat-dialog-content>This dialog showcases the title, close, content and actions elements.</div>
-<div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
+<div mat-dialog-content>
+  
+  
+<form  [formGroup]="addCourseForm" class="formbox" ngNativeValidate (submit)="addCourseDetails()">
+
+  <div class="row">
+    <div class="col-md-3 pt-3 subtitle">
+      Name
+    </div>
+    <div class="col-md-9">
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input formControlName="name" type="text" matInput placeholder="Enter name" [pattern]="'[a-zA-Z ]*'" required>
+          <mat-error>
+            Enter only alphabates
+        </mat-error>
+        </mat-form-field>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 pt-3 subtitle">
+      Description
+    </div>
+
+    <div class="col-md-9">
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Description</mat-label>
+          <textarea formControlName="description" rows="5" matInput [pattern]="'[a-zA-Z ]*'"></textarea>
+          <mat-error>
+            Enter only alphabates
+        </mat-error>
+        </mat-form-field>
+      </p>
+    </div>
+  </div>
+
+
+</form>
+
+
+</div>
+<div mat-dialog-actions  align="end">
+  <button left mat-raised-button style="color: white; background-color:rgb(71, 71, 237)" (click)="addCourseDetails()">Add</button>
+  <button mat-stroked-button mat-dialog-close style="color: white; background-color:rgb(71, 71, 237)" >Close</button>
 </div>

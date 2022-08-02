@@ -1,11 +1,11 @@
 <div class="cardsContainer" *ngIf="role==1">
-  <div class="cardColumn" *ngFor="let key of keydata">
+  <div class="cardColumn" *ngFor="let cardData of cardsData">
     <div class="statCard">
       <div class="leftPart">
-        <h2>{{ key }}</h2>
-        <p class="">{{dashboardData[key]}}</p>
+        <p class="">{{cardData.title}}</p>
+        <h2>{{ cardData.count }}</h2>
       </div>
-      <div class="rightPart" *ngFor="let cardData of cardsData">
+      <div class="rightPart">
         <i ngClass="{{ cardData.icon }}"></i>
       </div>
     </div>
@@ -13,7 +13,7 @@
 </div>
 
 
-<!-- <div class="cardsContainer" *ngIf="role==2">
+<div class="cardsContainer" *ngIf="role==2">
   <div class="cardColumn" *ngFor="let cardData of teacherCardsData">
     <div class="statCard">
       <div class="leftPart">
@@ -52,4 +52,6 @@
       </div>
     </div>
   </div>
-</div> -->
+
+
+</div>

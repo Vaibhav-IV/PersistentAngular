@@ -11,10 +11,11 @@
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Course Title</mat-label>
-          <input formControlName="name" type="text" matInput placeholder="Enter Course Title" [pattern]="'[a-zA-Z ]*'" required>
+          <input formControlName="name" type="text" matInput placeholder="Enter Course Title" [pattern]="'[a-zA-Z ]*'"
+            required>
           <mat-error>
             Enter only alphabates
-        </mat-error>
+          </mat-error>
         </mat-form-field>
       </p>
     </div>
@@ -69,7 +70,7 @@
           <textarea formControlName="description" rows="5" matInput [pattern]="'[a-zA-Z ]*'"></textarea>
           <mat-error>
             Enter only alphabates
-        </mat-error>
+          </mat-error>
         </mat-form-field>
       </p>
     </div>
@@ -145,9 +146,11 @@
           <mat-label>Assign Trainer</mat-label>
           <mat-select formControlName="teacher_id" placeholder="Please select Trainer">
             <mat-option label="--select Trainer --"></mat-option>
-            <mat-option value="1">Trainer 1</mat-option>
+            <!-- <mat-option value="1">Trainer 1</mat-option>
             <mat-option value="2">Trainer 2</mat-option>
-            <mat-option value="3">Trainer 3</mat-option>
+            <mat-option value="3">Trainer 3</mat-option> -->
+            <!-- loop through the teacherlist -->
+            <mat-option *ngFor="let teacher of teacherList" value="{{ teacher.id }}">{{ teacher.name }}</mat-option>
           </mat-select>
         </mat-form-field>
       </p>

@@ -1,3 +1,5 @@
+
+
 :host {
   display: flex;
   flex-direction: column;
@@ -28,7 +30,7 @@ mat-drawer-content {
   width: auto;
   height: 100vh;
   background-color: #F7FBFC;
-  overflow: scroll;
+  //overflow: scroll;
 }
 
 .main-content {
