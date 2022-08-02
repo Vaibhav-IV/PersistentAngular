@@ -1,6 +1,6 @@
 <div class="cardsContainer" *ngIf="role==1">
   <div class="cardColumn" *ngFor="let cardData of cardsData">
-    <div class="statCard">
+    <div *ngIf= "cardData.title != 'Logins'" class="statCard">
       <div class="leftPart">
         <p class="">{{cardData.title}}</p>
         <h2>{{ cardData.count }}</h2>
@@ -9,8 +9,20 @@
         <i ngClass="{{ cardData.icon }}"></i>
       </div>
     </div>
+
+    <div *ngIf= "cardData.title == 'Logins'" class="statCard">
+      <div class="leftPart">
+        <p class="">{{cardData.title}}</p>
+        <h2>{{ login }}</h2>
+      </div>
+      <div class="rightPart">
+        <i ngClass="{{ cardData.icon }}"></i>
+      </div>
+    </div>
+
   </div>
 </div>
+
 
 
 <div class="cardsContainer" *ngIf="role==2">

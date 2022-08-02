@@ -46,11 +46,17 @@ export class CardsComponent implements OnInit {
     // ]
   }
 
+  login: any 
+
   ngOnInit(): void {
     var apiData: any;
+    
     this.api.getDashboard().subscribe({
       next: (data) => {
         apiData = data.content;
+        this.login = data.content['Logins'].length
+        console.log(this.login);
+        
       },
       complete: () => {
         // push object to array cardsData

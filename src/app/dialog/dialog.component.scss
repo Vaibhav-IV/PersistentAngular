@@ -11,7 +11,7 @@
  }
 
  mat-form-field {
-    width: 250px;
+    width: 320px;
 }
 
  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
@@ -44,4 +44,8 @@
     .mat-form-field-required-marker {
         color: slategray;
     }
+}
+
+.dialogbuttons{
+    margin-left: 5px;
 }
